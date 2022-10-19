@@ -1,0 +1,17 @@
+{
+  "files": [],
+  "compilerOptions": {
+    "disableSourceOfProjectReferenceRedirect": true
+  },
+  "references": [
+    {
+      "path": "./apps/grid"
+    },
+    {
+      "path": "./apps/shell-app"
+    },
+    {
+      "path": "./apps/shell-app-e2e"
+    }
+  ]
+}

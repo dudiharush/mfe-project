@@ -1,0 +1,67 @@
+{
+  "root": "apps/grid",
+  "sourceRoot": "apps/grid/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "development",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/grid",
+        "index": "apps/grid/src/index.html",
+        "baseHref": "/",
+        "main": "apps/grid/src/index.ts",
+        "polyfills": "apps/grid/src/polyfills.ts",
+        "tsConfig": "apps/grid/tsconfig.json",
+        "assets": ["apps/grid/src/favicon.ico", "apps/grid/src/assets"],
+        "styles": ["apps/grid/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "apps/grid/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/grid/src/environments/environment.ts",
+              "with": "apps/grid/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": true,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "cd apps/grid && npm run dev",
+          "cd apps/shell-app && npm run dev"
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/grid/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/grid"],
+      "options": {
+        "jestConfig": "apps/grid/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:shared"]
+}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "projects": {
+    "grid": "apps/grid",
+    "image": "apps/image",
+    "image-e2e": "apps/image-e2e",
+    "list": "apps/list",
+    "list-e2e": "apps/list-e2e",
+    "shell-app": "apps/shell-app",
+    "shell-app-e2e": "apps/shell-app-e2e",
+    "text": "apps/text"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "references": [
+    { "path": "../Grid" },
+    { "path": "../Text" },
+    { "path": "../Image" },
+    { "path": "../List" }
+  ],
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}

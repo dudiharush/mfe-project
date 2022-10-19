@@ -1,0 +1,38 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es6",
+    "module": "esnext",
+    "lib": ["es5", "es6", "es2018", "dom"],
+    "skipDefaultLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "noEmit": false,
+    "incremental": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "composite": true,
+    "declarationMap": true,
+    "paths": {
+      "GridApp/*": ["./apps/grid/src/app/components/*"],
+      "ImageApp/*": ["./apps/image/src/app/components/*"],
+      "ListApp/*": ["./apps/list/src/app/components/*"],
+      "TextApp/*": ["./apps/text/src/app/components/*"],
+      "ShellApp/shell": ["./apps/shell-app/src/app/components/shell"],
+      "ShellApp/theme": ["./apps/shell-app/src/app/providers/theme"]
+    },
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ]
+  },
+  "exclude": ["node_modules", "tmp"]
+}

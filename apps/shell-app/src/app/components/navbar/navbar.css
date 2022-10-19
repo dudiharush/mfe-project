@@ -1,0 +1,30 @@
+.navbar {
+    background-color: #eee;
+    height: 4em;
+    display: flex;
+    align-items: center;
+    color: #000;
+    gap: 2em;
+    font-size: 1.2em;
+}
+
+.dark {
+    background-color: #2b3445;
+    color: #fff;
+}
+
+.navbar > span > a {
+    color: #000;
+}
+
+.navbar.dark > span > a {
+    color: #fff;
+}
+
+.title {
+    font-size: 2em;
+}
+
+.navbar > span:first-child {
+    margin-left: 1em;
+}
