@@ -8,7 +8,7 @@ export function App() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Shell>
-        <List />
+        <List list={['a','b','c']}/>
       </Shell>
     </Suspense>
   );

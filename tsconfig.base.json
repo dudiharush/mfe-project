@@ -24,9 +24,9 @@
       "GridApp/*": ["./apps/grid/src/app/components/*"],
       "ImageApp/*": ["./apps/image/src/app/components/*"],
       "ListApp/*": ["./apps/list/src/app/components/*"],
-      "TextApp/*": ["./apps/text/src/app/components/*"],
       "ShellApp/shell": ["./apps/shell-app/src/app/components/shell"],
-      "ShellApp/theme": ["./apps/shell-app/src/app/providers/theme"]
+      "ShellApp/theme": ["./apps/shell-app/src/app/providers/theme"],
+      "TextApp/*": ["./apps/text/src/app/components/*"]
     },
     "plugins": [
       {

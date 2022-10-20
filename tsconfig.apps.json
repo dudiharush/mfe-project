@@ -9,9 +9,6 @@
     },
     {
       "path": "./apps/shell-app"
-    },
-    {
-      "path": "./apps/shell-app-e2e"
     }
   ]
 }
