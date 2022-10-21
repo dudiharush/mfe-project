@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "references": [
+    { "path": "../grid-app" },
+    { "path": "../text-app" },
+    { "path": "../image-app" },
+    { "path": "../list-app" }
+  ],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "files": [
+    "../../node_modules/@nrwl/react/typings/cssmodule.d.ts",
+    "../../node_modules/@nrwl/react/typings/image.d.ts"
+  ]
+}

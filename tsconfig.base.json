@@ -21,12 +21,12 @@
     "composite": true,
     "declarationMap": true,
     "paths": {
-      "GridApp/*": ["./apps/grid/src/app/components/*"],
-      "ImageApp/*": ["./apps/image/src/app/components/*"],
-      "ListApp/*": ["./apps/list/src/app/components/*"],
-      "ShellApp/shell": ["./apps/shell-app/src/app/components/shell"],
-      "ShellApp/theme": ["./apps/shell-app/src/app/providers/theme"],
-      "TextApp/*": ["./apps/text/src/app/components/*"]
+      "GridApp/*": ["./apps/grid-app/src/app/components/*"],
+      "ImageApp/*": ["./apps/image-app/src/app/components/*"],
+      "ListApp/*": ["./apps/list-app/src/app/components/*"],
+      "MainApp/shell": ["./apps/main-app/src/app/components/shell"],
+      "MainApp/theme": ["./apps/main-app/src/app/providers/theme"],
+      "TextApp/*": ["./apps/text-app/src/app/components/*"]
     },
     "plugins": [
       {

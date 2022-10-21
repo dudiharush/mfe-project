@@ -1,14 +1,10 @@
 {
   "version": 2,
   "projects": {
-    "grid": "apps/grid",
-    "image": "apps/image",
-    "image-e2e": "apps/image-e2e",
-    "list": "apps/list",
-    "list-e2e": "apps/list-e2e",
-    "mmm123": "apps/mmm123",
-    "mmm123-e2e": "apps/mmm123-e2e",
-    "shell-app": "apps/shell-app",
-    "text": "apps/text"
+    "grid-app": "apps/grid-app",
+    "image-app": "apps/image-app",
+    "list-app": "apps/list-app",
+    "main-app": "apps/main-app",
+    "text-app": "apps/text-app"
   }
 }

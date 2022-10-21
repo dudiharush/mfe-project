@@ -1,0 +1,66 @@
+{
+  "root": "apps/list-app",
+  "sourceRoot": "apps/list-app/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "development",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/list-app",
+        "index": "apps/list-app/src/index.html",
+        "baseHref": "/",
+        "main": "apps/list-app/src/main.tsx",
+        "polyfills": "apps/list-app/src/polyfills.ts",
+        "tsConfig": "apps/list-app/tsconfig.app.json",
+        "assets": ["apps/list-app/src/favicon.ico", "apps/list-app/src/assets"],
+        "styles": ["apps/list-app/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "apps/list-app/webpack.config.js"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/list-app/src/environments/environment.ts",
+              "with": "apps/list-app/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "cd apps/list-app && npm run serve",
+          "cd apps/main-app && npm run serve"
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/list-app/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/list-app"],
+      "options": {
+        "jestConfig": "apps/list-app/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:shared"]
+}

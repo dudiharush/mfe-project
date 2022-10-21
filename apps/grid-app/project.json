@@ -1,0 +1,67 @@
+{
+  "root": "apps/grid-app",
+  "sourceRoot": "apps/grid-app/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "development",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/grid-app",
+        "index": "apps/grid-app/src/index.html",
+        "baseHref": "/",
+        "main": "apps/grid-app/src/index.ts",
+        "polyfills": "apps/grid-app/src/polyfills.ts",
+        "tsConfig": "apps/grid-app/tsconfig.json",
+        "assets": ["apps/grid-app/src/favicon.ico", "apps/grid-app/src/assets"],
+        "styles": ["apps/grid-app/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "apps/grid-app/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/grid-app/src/environments/environment.ts",
+              "with": "apps/grid-app/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": true,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "cd apps/grid-app && npm run serve",
+          "cd apps/main-app && npm run serve"
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/grid-app/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/grid-app"],
+      "options": {
+        "jestConfig": "apps/grid-app/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:shared"]
+}

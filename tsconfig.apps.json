@@ -5,10 +5,19 @@
   },
   "references": [
     {
-      "path": "./apps/grid"
+      "path": "./apps/grid-app"
     },
     {
-      "path": "./apps/shell-app"
+      "path": "./apps/image-app"
+    },
+    {
+      "path": "./apps/list-app"
+    },
+    {
+      "path": "./apps/text-app"
+    },
+    {
+      "path": "./apps/main-app"
     }
   ]
 }

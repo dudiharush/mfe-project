@@ -1,0 +1,69 @@
+{
+  "root": "apps/image-app",
+  "sourceRoot": "apps/image-app/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "development",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/image-app",
+        "index": "apps/image-app/src/index.html",
+        "baseHref": "/",
+        "main": "apps/image-app/src/main.tsx",
+        "polyfills": "apps/image-app/src/polyfills.ts",
+        "tsConfig": "apps/image-app/tsconfig.app.json",
+        "assets": [
+          "apps/image-app/src/favicon.ico",
+          "apps/image-app/src/assets"
+        ],
+        "styles": ["apps/image-app/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "apps/image-app/webpack.config.js"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/image-app/src/environments/environment.ts",
+              "with": "apps/image-app/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "cd apps/image-app && npm run serve",
+          "cd apps/main-app && npm run serve"
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/image-app/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/image-app"],
+      "options": {
+        "jestConfig": "apps/image-app/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:shared"]
+}

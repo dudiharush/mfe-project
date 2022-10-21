@@ -1,0 +1,70 @@
+{
+  "root": "apps/main-app",
+  "sourceRoot": "apps/main-app/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "development",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/main-app",
+        "index": "apps/main-app/src/index.html",
+        "baseHref": "/",
+        "main": "apps/main-app/src/index.ts",
+        "polyfills": "apps/main-app/src/polyfills.ts",
+        "tsConfig": "apps/main-app/tsconfig.json",
+        "assets": ["apps/main-app/src/favicon.ico", "apps/main-app/src/assets"],
+        "styles": ["apps/main-app/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "apps/main-app/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/main-app/src/environments/environment.ts",
+              "with": "apps/main-app/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": true,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "cd apps/main-app && npm run serve",
+          "cd apps/grid-app && npm run serve",
+          "cd apps/text-app && npm run serve",
+          "cd apps/image-app && npm run serve",
+          "cd apps/list-app && npm run serve"
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/main-app/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/main-app"],
+      "options": {
+        "jestConfig": "apps/main-app/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:shared"]
+}

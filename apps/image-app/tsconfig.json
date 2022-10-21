@@ -1,0 +1,5 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "references": [{ "path": "../main-app" }],
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}
