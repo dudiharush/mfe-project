@@ -1,6 +1,6 @@
 # mfe-project
 
-micro front end with Nx and Webpack module fedefation
+micro front end with Nx and Webpack module federation
 
 # Env requirements:
 
